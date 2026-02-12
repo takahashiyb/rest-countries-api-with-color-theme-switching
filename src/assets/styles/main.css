@@ -1,0 +1,58 @@
+:root {
+  /* COLOR */
+  --white: 0deg, 100%, 100%;
+  --black: 0deg, 0%, 0%;
+
+  /* Grey */
+
+  --grey-950: 200deg, 15%, 8%;
+  --grey-400: 0deg, 0%, 50%;
+  --grey-350: 0deg, 0%, 59%;
+  --grey-300: 0deg, 0%, 70%;
+  --grey-250: 0deg, 0%, 77%;
+  --grey-050: 0deg, 0%, 99%;
+
+  /* Blue */
+  --blue-950: 207deg, 26%, 17%;
+  --blue-900: 209deg, 23%, 22%;
+
+  /* TYPOGRAPHY */
+
+  font-family: 'Nunito Sans';
+
+  --font-preset-1: 800 2rem/1.375 'Nunito Sans';
+  --font-preset-2: 800 1.5rem/1.375 'Nunito Sans';
+  --font-preset-3: 800 1.125rem/1.45 'Nunito Sans';
+  --font-preset-4sb: 600 1rem/2 'Nunito Sans';
+  --font-preset-4l: 300 1rem/2 'Nunito Sans';
+  --font-preset-5r: 400 0.875rem/1.45 'Nunito Sans';
+  --font-preset-5l: 300 0.875rem/2.25 'Nunito Sans';
+  --font-preset-6sb: 600 0.75rem/1.35 'Nunito Sans';
+  --font-preset-6r: 400 0.75rem/1.35 'Nunito Sans';
+  --font-preset-6l: 300 0.75rem/1.35 'Nunito Sans';
+
+  /* SPACING */
+
+  font-size: 16px;
+
+  --spacing-0100: 0.5em;
+  --spacing-0200: 1em;
+  --spacing-0300: 1.5em;
+  --spacing-0400: 2em;
+  --spacing-0500: 2.5em;
+  --spacing-0600: 3em;
+  --spacing-0700: 3.5em;
+  --spacing-0800: 4em;
+  --spacing-0900: 4.5em;
+  --spacing-1000: 5em;
+
+  /* DEFAULTS */
+
+  padding: 0;
+  margin: 0;
+  word-wrap: break-word;
+  box-sizing: border-box;
+
+  color: hsl(var(--grey-950));
+  background-color: hsl(var(--white));
+}

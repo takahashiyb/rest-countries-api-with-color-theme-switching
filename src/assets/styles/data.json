@@ -1,0 +1,202 @@
+[
+  {
+    "category": "colors",
+    "groups": [
+      {
+        "group": "White / Black",
+        "list": [
+          {
+            "name": "white",
+            "hex": "#FFFFFF",
+            "rgb": "255, 255, 255",
+            "hsl": "0°, 100%, 100%",
+            "variable": "--white"
+          },
+          {
+            "name": "black",
+            "hex": "#000000",
+            "rgb": "0, 0, 0",
+            "hsl": "0°, 0%, 0%",
+            "variable": "--black"
+          }
+        ]
+      },
+      {
+        "group": "Grey",
+        "list": [
+          {
+            "name": "Grey 950",
+            "hex": "#111517",
+            "rgb": "17, 21, 23",
+            "hsl": "200°, 15%, 8%",
+            "variable": "--grey-950"
+          },
+          {
+            "name": "Grey 400",
+            "hex": "#808080",
+            "rgb": "128, 128, 128",
+            "hsl": "0°, 0%, 50%",
+            "variable": "--grey-400"
+          },
+          {
+            "name": "Grey 350",
+            "hex": "#979797",
+            "rgb": "151, 151, 151",
+            "hsl": "0°, 0%, 59%",
+            "variable": "--grey-350"
+          },
+          {
+            "name": "Grey 300",
+            "hex": "#B2B2B2",
+            "rgb": "178, 178, 178",
+            "hsl": "0°, 0%, 70%",
+            "variable": "--grey-300"
+          },
+          {
+            "name": "Grey 250",
+            "hex": "#C4C4C4",
+            "rgb": "196, 196, 196",
+            "hsl": "0°, 0%, 77%",
+            "variable": "--grey-250"
+          },
+          {
+            "name": "Grey 50",
+            "hex": "#FCFCFC",
+            "rgb": "252, 252, 252",
+            "hsl": "0°, 0%, 99%",
+            "variable": "--grey-050"
+          }
+        ]
+      },
+      {
+        "group": "Blue",
+        "list": [
+          {
+            "name": "Blue 950",
+            "hex": "#202C36",
+            "rgb": "32, 44, 54",
+            "hsl": "207°, 26%, 17%",
+            "variable": "--blue-950"
+          },
+          {
+            "name": "Blue 900",
+            "hex": "#2B3844",
+            "rgb": "43, 56, 68",
+            "hsl": "209°, 23%, 22%",
+            "variable": "--blue-900"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Typography",
+    "groups": [
+      {
+        "name": "Text Preset 1",
+        "font-family": "Nunito Sans ExtraBold",
+        "font-size": "32px",
+        "line-height": "137.5%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
+        "variable": "--font-preset-1"
+      },
+      {
+        "name": "Text Preset 2",
+        "font-family": "Nunito Sans ExtraBold",
+        "font-size": "24px",
+        "line-height": "137.5%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.",
+        "variable": "--font-preset-2"
+      },
+      {
+        "name": "Text Preset 3",
+        "font-family": "Nunito Sans ExtraBold",
+        "font-size": "18px",
+        "line-height": "145%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-3"
+      },
+      {
+        "name": "Text Preset 4 (SemiBold)",
+        "font-family": "Nunito Sans SemiBold",
+        "font-size": "16px",
+        "line-height": "200%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-4sb"
+      },
+      {
+        "name": "Text Preset 4 (Light)",
+        "font-family": "Nunito Sans Light",
+        "font-size": "16px",
+        "line-height": "200%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-4l"
+      },
+      {
+        "name": "Text Preset 5 (Regular)",
+        "font-family": "Nunito Sans Regular",
+        "font-size": "14px",
+        "line-height": "145%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-5r"
+      },
+      {
+        "name": "Text Preset 5 (Light)",
+        "font-family": "Nunito Sans Light",
+        "font-size": "14px",
+        "line-height": "225%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-5l"
+      },
+      {
+        "name": "Text Preset 6 (SemiBold)",
+        "font-family": "Nunito Sans SemiBold",
+        "font-size": "12px",
+        "line-height": "135%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-6sb"
+      },
+      {
+        "name": "Text Preset 6 (Regular)",
+        "font-family": "Nunito Sans Regular",
+        "font-size": "12px",
+        "line-height": "135%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-6r"
+      },
+      {
+        "name": "Text Preset 6 (Light)",
+        "font-family": "Nunito Sans Light",
+        "font-size": "12px",
+        "line-height": "135%",
+        "letter-spacing": "0px",
+        "sample-text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Duis aute irure dolor in reprehenderit in voluptate  velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint  occaecat cupidatat non proident, sunt in culpa qui officia deserunt  mollit anim id est laborum.",
+        "variable": "--font-preset-6l"
+      }
+    ]
+  },
+  {
+    "category": "Spacing",
+    "groups": [
+      { "name": "spacing-100", "pixels": "8px", "variable": "--spacing-0100" },
+      { "name": "spacing-200", "pixels": "16px", "variable": "--spacing-0200" },
+      { "name": "spacing-300", "pixels": "24px", "variable": "--spacing-0300" },
+      { "name": "spacing-400", "pixels": "32px", "variable": "--spacing-0400" },
+      { "name": "spacing-500", "pixels": "40px", "variable": "--spacing-0500" },
+      { "name": "spacing-600", "pixels": "48px", "variable": "--spacing-0600" },
+      { "name": "spacing-4700", "pixels": "56px", "variable": "--spacing-0700" },
+      { "name": "spacing-800", "pixels": "64px", "variable": "--spacing-0800" },
+      { "name": "spacing-900", "pixels": "72px", "variable": "--spacing-0900" },
+      { "name": "spacing-1000", "pixels": "80px", "variable": "--spacing-1000" }
+    ]
+  }
+]
