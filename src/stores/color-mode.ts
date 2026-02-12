@@ -9,4 +9,3 @@ export const useColorMode = defineStore('color-mode', () => {
   }
   return { mode, switchMode }
 })
-32 16
