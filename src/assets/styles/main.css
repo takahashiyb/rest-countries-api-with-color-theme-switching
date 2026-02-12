@@ -46,13 +46,22 @@
   --spacing-0900: 4.5em;
   --spacing-1000: 5em;
 
+  /* CUSTOM PROPERTIES */
+
+  /* LIGHT MODE COLOR */
+
+  --light-bg: hsl(var(--white));
+  --light-clr: hsl(var(--grey-950));
+
+  /* DARK MODE COLOR */
+
+  --dark-bg: hsl(var(--blue-900));
+  --dark-clr: hsl(var(--white));
+
   /* DEFAULTS */
 
   padding: 0;
   margin: 0;
   word-wrap: break-word;
   box-sizing: border-box;
-
-  color: hsl(var(--grey-950));
-  background-color: hsl(var(--white));
 }

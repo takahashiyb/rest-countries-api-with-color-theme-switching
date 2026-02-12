@@ -29,16 +29,24 @@ const color = useColorMode()
 </template>
 <style scoped>
 header {
+  --mode-background-color: var(--light-bg);
+  --mode-color: var(--light-clr);
+
   display: flex;
+
+  background-color: var(--mode-background-color);
+  color: var(--mode-color);
 
   padding-top: var(--spacing-0200);
   padding-inline: var(--spacing-0400);
   padding-bottom: var(--spacing-0200);
+
+  box-shadow: 0.1em 0.1em 1em hsl(var(--black), 0.15);
 }
 
 header.dark {
-  background-color: hsl(var(--blue-900));
-  color: hsl(var(--white));
+  --mode-background-color: var(--dark-bg);
+  --mode-color: var(--dark-clr);
 }
 
 span {
@@ -55,6 +63,8 @@ div {
   display: flex;
   align-items: center;
   gap: var(--spacing-0100);
+
+  cursor: pointer;
 }
 
 svg {
