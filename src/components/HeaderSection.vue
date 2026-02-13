@@ -41,6 +41,8 @@ header {
   padding-inline: var(--spacing-0400);
   padding-bottom: var(--spacing-0200);
 
+  margin-bottom: var(--spacing-0600);
+
   box-shadow: 0.1em 0.1em 1em hsl(var(--black), 0.15);
 }
 
