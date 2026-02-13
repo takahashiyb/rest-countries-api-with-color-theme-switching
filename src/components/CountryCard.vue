@@ -14,7 +14,7 @@ const props = defineProps<{
 }>()
 </script>
 <template>
-  <div :class="color.mode" class="card__country block">
+  <router-link to="/country/" :class="color.mode" class="card__country block">
     <div class="container__flag">
       <img :src="props.data.svg" :alt="`${props.data.name}'s flag`" />
     </div>
@@ -30,7 +30,7 @@ const props = defineProps<{
         <strong class="topic">Capital:</strong><span>{{ props.data.capital }}</span>
       </p>
     </div>
-  </div>
+  </router-link>
 </template>
 <style scoped>
 .card__country {
@@ -39,6 +39,10 @@ const props = defineProps<{
 
   display: grid;
   overflow: hidden;
+}
+
+.card__country:hover h2 {
+  text-decoration: underline;
 }
 
 img {
@@ -60,6 +64,10 @@ strong {
 
 span {
   font: var(--font-preset-5l);
+}
+
+a {
+  text-decoration: none;
 }
 
 @media (min-width: 47.5em) {
