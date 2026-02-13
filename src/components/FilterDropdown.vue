@@ -1,9 +1,10 @@
 <script lang="ts" setup>
 import { useColorMode } from '@/stores/color-mode'
-import { useFilterDropdown } from '@/stores/filter'
+import { useFilterDropdown, useFilterResult } from '@/stores/filter'
 
 const color = useColorMode()
 const dropdown = useFilterDropdown()
+const filter = useFilterResult()
 
 const props = defineProps<{
   data: string[]
@@ -12,7 +13,7 @@ const props = defineProps<{
 <template>
   <div v-if="dropdown.isDropdownOpen" :class="color.mode" class="block dropdown">
     <ul>
-      <li v-for="region in props.data">{{ region }}</li>
+      <li v-for="region in props.data" @click="filter.changeRegionFilter(region)">{{ region }}</li>
     </ul>
   </div>
 </template>

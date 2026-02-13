@@ -2,10 +2,11 @@
 import { computed } from 'vue'
 import type { Country } from '@/assets/data/types'
 import { useColorMode } from '@/stores/color-mode'
-import { useFilterDropdown } from '@/stores/filter'
+import { useFilterDropdown, useFilterResult } from '@/stores/filter'
 import FilterDropdown from './FilterDropdown.vue'
 
 const color = useColorMode()
+const filter = useFilterResult()
 const dropdown = useFilterDropdown()
 
 const props = defineProps<{
@@ -18,7 +19,7 @@ const regions = computed(() => {
 </script>
 <template>
   <div :class="color.mode" class="placeholder block" @click="dropdown.openDropdown()">
-    <span>Filter by Region</span>
+    <span>{{ filter.isRegionFilter || 'Filter by Region' }}</span>
     <svg viewBox="0 0 32 32">
       <path d="M9.914 11.086l-2.829 2.829 8.914 8.914 8.914-8.914-2.828-2.828-6.086 6.086z"></path>
     </svg>
