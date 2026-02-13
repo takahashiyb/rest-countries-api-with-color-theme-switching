@@ -4,7 +4,7 @@ import { useColorMode } from '@/stores/color-mode'
 const color = useColorMode()
 </script>
 <template>
-  <div :class="color.mode">
+  <div :class="color.mode" class="block">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
       <!-- !Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc. -->
       <path
@@ -17,24 +17,19 @@ const color = useColorMode()
 </template>
 <style scoped>
 div {
-  --background-color: var(--light-bg);
   --placeholder-color: hsl(var(--grey-250));
 
   display: flex;
   gap: var(--spacing-0300);
 
   height: var(--spacing-0200);
-  background-color: var(--background-color);
 
   padding-top: var(--spacing-0200);
   padding-inline: var(--spacing-0400);
   padding-bottom: var(--spacing-0200);
-
-  box-shadow: 0.1em 0.1em 1em hsl(var(--black), 0.15);
 }
 
-div.dark {
-  --background-color: var(--dark-bg);
+.block.dark {
   --placeholder-color: var(--dark-clr);
 }
 
@@ -45,14 +40,23 @@ input {
   font: var(--font-preset-6r);
 
   border: none;
+  outline: none;
+}
+
+path {
+  fill: var(--placeholder-color);
+}
+
+div:has(input:focus-visible) path {
+  fill: var(--color);
 }
 
 input::placeholder {
   color: var(--placeholder-color);
 }
 
-path {
-  fill: var(--placeholder-color);
+input:not(:placeholder-shown) {
+  color: var(--color);
 }
 
 @media (min-width: 47.5em) {
@@ -65,10 +69,6 @@ path {
   input {
     color: hsl(var(--grey-400));
     font: var(--font-preset-5r);
-  }
-
-  path {
-    fill: hsl(var(--grey-400));
   }
 }
 </style>
