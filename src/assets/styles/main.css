@@ -51,11 +51,13 @@
   /* LIGHT MODE COLOR */
 
   --light-bg: hsl(var(--white));
+  --light-hover-bg: hsl(var(--grey-250));
   --light-clr: hsl(var(--grey-950));
 
   /* DARK MODE COLOR */
 
   --dark-bg: hsl(var(--blue-900));
+  --dark-hover-bg: hsl(var(--grey-950));
   --dark-clr: hsl(var(--white));
 
   /* DEFAULTS */
