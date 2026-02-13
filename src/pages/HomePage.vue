@@ -2,37 +2,16 @@
 import type { Country } from '@/assets/data/types'
 import FilterButton from '@/components/FilterButton.vue'
 import SearchBar from '@/components/SearchBar.vue'
-import { onMounted, ref, watch } from 'vue'
+import { watch } from 'vue'
 import { useFilterResult } from '@/stores/filter'
 import CountryCard from '@/components/CountryCard.vue'
+import { useStoreData } from '@/stores/data'
 
 const filter = useFilterResult()
-
-let typedData = ref<Country[]>([])
-
-let resultsData = ref(typedData.value)
-
-function loadData() {
-  fetch('/data/data.json')
-    .then((res) => res.json())
-    .then((data) => {
-      typedData.value = data
-      resultsData.value = data
-    })
-}
-
-onMounted(loadData)
+const data = useStoreData()
 
 watch([() => filter.querySearch, () => filter.queryRegion], ([newSearch, newFilter]) => {
-  resultsData.value = typedData.value
-
-  resultsData.value = newFilter
-    ? resultsData.value.filter((item) => item.region === newFilter)
-    : resultsData.value
-
-  resultsData.value = resultsData.value.filter((item) =>
-    item.name.toLowerCase().includes(newSearch),
-  )
+  data.filterResults(newSearch, newFilter)
 })
 
 interface CountryCardProps {
@@ -57,10 +36,10 @@ function convertCountryCardProps(country: Country): CountryCardProps {
   <main>
     <section class="querySection">
       <SearchBar />
-      <FilterButton :data="typedData" />
+      <FilterButton :data="data.resultsData" />
     </section>
     <section class="resultSection">
-      <CountryCard v-for="country in resultsData" :data="convertCountryCardProps(country)" />
+      <CountryCard v-for="country in data.resultsData" :data="convertCountryCardProps(country)" />
     </section>
   </main>
 </template>
@@ -104,24 +83,5 @@ function convertCountryCardProps(country: Country): CountryCardProps {
   .resultSection {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-</style>
-<style>
-.block {
-  --background-color: var(--light-bg);
-  --hover-bg-color: var(--light-hover-bg);
-  --color: var(--light-clr);
-
-  background-color: var(--background-color);
-  color: var(--color);
-
-  border-radius: 5px;
-  box-shadow: 0.1em 0.1em 1em hsl(var(--black), 0.15);
-}
-
-.block.dark {
-  --background-color: var(--dark-bg);
-  --hover-bg-color: var(--dark-hover-bg);
-  --color: var(--dark-clr);
 }
 </style>
