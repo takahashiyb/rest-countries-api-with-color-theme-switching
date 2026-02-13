@@ -66,4 +66,28 @@
   margin: 0;
   word-wrap: break-word;
   box-sizing: border-box;
+
+  /* TYPOGRAPHY DEFAULTS */
+
+  h1 {
+    font: var(--font-preset-6sb);
+    font-weight: 800;
+  }
+
+  h2 {
+    font: var(--font-preset-3);
+  }
+
+  @media (min-width: 47.5em) {
+  }
+
+  @media (min-width: 56.67em) {
+    h1 {
+      font: var(--font-preset-2);
+    }
+  }
+}
+
+body {
+  margin: 0;
 }
