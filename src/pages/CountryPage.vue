@@ -1,25 +1,16 @@
 <script setup lang="ts">
 import ReturnButton from '@/components/ReturnButton.vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useStoreData } from '@/stores/data'
-import type { Country } from '@/assets/data/types'
 import { useColorMode } from '@/stores/color-mode'
 
 const route = useRoute()
-const router = useRouter()
 
 const data = useStoreData()
 
 const color = useColorMode()
 
-const country = route.query.name as string | undefined
-
-let countryData = data.findCountry(country) as Country
-
-if (!countryData) {
-  // redirect to safe path
-  router.replace({ path: '/' })
-}
+const country = route.query.name as string
 </script>
 
 <template>
@@ -27,51 +18,65 @@ if (!countryData) {
     <div class="return">
       <ReturnButton />
     </div>
-    <div class="container__country">
+    <div class="container__country" v-if="data.isReady">
       <div class="container__flag">
-        <img :src="countryData.flags.svg" alt="" />
+        <img :src="data.findCountry(country).flag" alt="" />
       </div>
       <div>
-        <h1 class="details">{{ countryData.name }}</h1>
+        <h1 class="details">{{ data.findCountry(country).name }}</h1>
         <div class="container__detail">
           <div class="details">
             <p>
-              <strong>Native Name:</strong><span>{{ countryData.nativeName }}</span>
+              <strong>Native Name:</strong><span>{{ data.findCountry(country).nativeName }}</span>
             </p>
             <p>
-              <strong>Population:</strong><span>{{ countryData.population }}</span>
+              <strong>Population:</strong><span>{{ data.findCountry(country).population }}</span>
             </p>
             <p>
-              <strong>Region:</strong><span>{{ countryData.region }}</span>
+              <strong>Region:</strong><span>{{ data.findCountry(country).region }}</span>
             </p>
             <p>
-              <strong>Subregion:</strong><span>{{ countryData.subregion }}</span>
+              <strong>Subregion:</strong><span>{{ data.findCountry(country).subregion }}</span>
             </p>
             <p>
-              <strong>Capital:</strong><span>{{ countryData.capital }}</span>
+              <strong>Capital:</strong><span>{{ data.findCountry(country).capital }}</span>
             </p>
           </div>
           <div class="details">
             <p>
               <strong>Top Level Domain:</strong
-              ><span>{{ countryData.topLevelDomain.toString() }}</span>
+              ><span>{{ data.findCountry(country).topLevelDomain.toString() }}</span>
             </p>
 
             <p>
               <strong>Currencies:</strong
-              ><span>{{ countryData.currencies?.map((item) => item.name).toString() }}</span>
+              ><span>{{
+                data
+                  .findCountry(country)
+                  .currencies?.map((item) => item.name)
+                  .toString()
+              }}</span>
             </p>
 
             <p>
               <strong>Languages:</strong
-              ><span>{{ countryData.languages.map((item) => item.name).toString() }}</span>
+              ><span>{{
+                data
+                  .findCountry(country)
+                  .languages.map((item) => item.name)
+                  .toString()
+              }}</span>
             </p>
           </div>
         </div>
         <div class="border">
           <p class="border-title details"><strong>Bordering Countries:</strong></p>
           <div class="container__border">
-            <p class="border-list block" :class="color.mode" v-for="border in countryData.borders">
+            <p
+              class="border-list block"
+              :class="color.mode"
+              v-for="border in data.findCountry(country).borders"
+            >
               {{ border }}
             </p>
           </div>

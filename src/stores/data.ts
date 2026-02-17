@@ -1,9 +1,11 @@
-import { watch, ref } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { Country } from '@/assets/data/types'
 
 export const useStoreData = defineStore('data', () => {
   let typedData = ref<Country[]>([])
+
+  const isReady = ref<boolean>(false)
 
   let resultsData = ref(typedData.value)
 
@@ -13,6 +15,9 @@ export const useStoreData = defineStore('data', () => {
       .then((data) => {
         typedData.value = data
         resultsData.value = data
+      })
+      .then(() => {
+        isReady.value = true
       })
   }
 
@@ -28,11 +33,11 @@ export const useStoreData = defineStore('data', () => {
     )
   }
 
-  function findCountry(country?: string) {
+  function findCountry(country: string) {
     const data = typedData.value
 
-    return country ? data.find((item) => item.name === country) : ''
+    return data.find((item) => item.name === country) as Country
   }
 
-  return { typedData, resultsData, loadData, filterResults, findCountry }
+  return { isReady, findCountry, typedData, resultsData, loadData, filterResults }
 })
