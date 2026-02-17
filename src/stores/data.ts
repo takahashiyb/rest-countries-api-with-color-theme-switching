@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { watch, ref } from 'vue'
 import { defineStore } from 'pinia'
 import type { Country } from '@/assets/data/types'
 
@@ -28,5 +28,11 @@ export const useStoreData = defineStore('data', () => {
     )
   }
 
-  return { resultsData, loadData, filterResults }
+  function findCountry(country?: string) {
+    const data = typedData.value
+
+    return country ? data.find((item) => item.name === country) : ''
+  }
+
+  return { typedData, resultsData, loadData, filterResults, findCountry }
 })
