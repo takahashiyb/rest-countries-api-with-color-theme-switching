@@ -10,7 +10,7 @@ export const useStoreData = defineStore('data', () => {
   let resultsData = ref(typedData.value)
 
   function loadData() {
-    fetch('/data/data.json')
+    fetch(`${import.meta.env.BASE_URL}data/data.json`)
       .then((res) => res.json())
       .then((data) => {
         typedData.value = data
