@@ -51,18 +51,21 @@
   --background-color: var(--light-bg);
   --hover-bg-color: var(--light-hover-bg);
   --color: var(--light-clr);
+  --html-clr: var(--light-html-clr: );
 
   /* LIGHT MODE COLOR */
 
   --light-bg: hsl(var(--white));
   --light-hover-bg: hsl(var(--grey-250));
   --light-clr: hsl(var(--grey-950));
+  --light-html-clr: hsl(var(--grey-050));
 
   /* DARK MODE COLOR */
 
   --dark-bg: hsl(var(--blue-900));
   --dark-hover-bg: hsl(var(--grey-950));
   --dark-clr: hsl(var(--white));
+  --dark-html-clr: hsl(var(--blue-950));
 
   /* DEFAULTS */
 
@@ -100,6 +103,7 @@ body {
   --background-color: var(--dark-bg);
   --hover-bg-color: var(--dark-hover-bg);
   --color: var(--dark-clr);
+  --html-clr: var(--dark-html-clr);
 }
 
 .block {
@@ -111,5 +115,5 @@ body {
 }
 
 html {
-  background-color: var(--background-color);
+  background-color: var(--html-clr);
 }
