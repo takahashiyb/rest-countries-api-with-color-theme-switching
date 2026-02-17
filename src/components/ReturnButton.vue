@@ -38,11 +38,7 @@ span {
   font: var(--font-preset-4l);
 }
 
-a {
-  text-decoration: none;
-}
-
-a:hover {
+div:hover {
   text-decoration: underline;
 }
 </style>
