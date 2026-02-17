@@ -39,5 +39,11 @@ export const useStoreData = defineStore('data', () => {
     return data.find((item) => item.name === country) as Country
   }
 
-  return { isReady, findCountry, typedData, resultsData, loadData, filterResults }
+  function findBorder(country: string) {
+    const data = typedData.value
+
+    return data.find((item) => item.alpha3Code === country) as Country
+  }
+
+  return { isReady, findBorder, findCountry, typedData, resultsData, loadData, filterResults }
 })
