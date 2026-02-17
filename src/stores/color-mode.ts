@@ -6,6 +6,19 @@ export const useColorMode = defineStore('color-mode', () => {
 
   function switchMode(newMode: string) {
     mode.value = newMode
+    switchHtmlColor(newMode)
   }
+
+  function switchHtmlColor(newMode: string) {
+    const classHtml = document.querySelector('html')?.classList
+
+    if (newMode === 'dark' && classHtml) {
+      classHtml.add('dark')
+    }
+    if (newMode !== 'dark' && classHtml) {
+      classHtml.remove('dark')
+    }
+  }
+
   return { mode, switchMode }
 })

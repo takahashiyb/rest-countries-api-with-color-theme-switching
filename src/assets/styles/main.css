@@ -48,6 +48,10 @@
 
   /* CUSTOM PROPERTIES */
 
+  --background-color: var(--light-bg);
+  --hover-bg-color: var(--light-hover-bg);
+  --color: var(--light-clr);
+
   /* LIGHT MODE COLOR */
 
   --light-bg: hsl(var(--white));
@@ -92,11 +96,13 @@ body {
   margin: 0;
 }
 
-.block {
-  --background-color: var(--light-bg);
-  --hover-bg-color: var(--light-hover-bg);
-  --color: var(--light-clr);
+.dark {
+  --background-color: var(--dark-bg);
+  --hover-bg-color: var(--dark-hover-bg);
+  --color: var(--dark-clr);
+}
 
+.block {
   background-color: var(--background-color);
   color: var(--color);
 
@@ -104,8 +110,6 @@ body {
   box-shadow: 0.1em 0.1em 1em hsl(var(--black), 0.15);
 }
 
-.block.dark {
-  --background-color: var(--dark-bg);
-  --hover-bg-color: var(--dark-hover-bg);
-  --color: var(--dark-clr);
+html {
+  background-color: var(--background-color);
 }

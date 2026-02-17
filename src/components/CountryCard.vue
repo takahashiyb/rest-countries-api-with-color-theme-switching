@@ -12,9 +12,14 @@ const props = defineProps<{
     svg: string
   }
 }>()
+
 </script>
 <template>
-  <router-link to="/country/" :class="color.mode" class="card__country block">
+  <router-link
+    :to="{ path: '/country/', query: { name: props.data.name } }"
+    :class="color.mode"
+    class="card__country block"
+  >
     <div class="container__flag">
       <img :src="props.data.svg" :alt="`${props.data.name}'s flag`" />
     </div>
