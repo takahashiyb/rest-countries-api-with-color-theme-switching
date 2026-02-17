@@ -3,6 +3,7 @@ import ReturnButton from '@/components/ReturnButton.vue'
 import { useRoute } from 'vue-router'
 import { useStoreData } from '@/stores/data'
 import { useColorMode } from '@/stores/color-mode'
+import { watch } from 'vue'
 
 const route = useRoute()
 
@@ -10,7 +11,14 @@ const data = useStoreData()
 
 const color = useColorMode()
 
-const country = route.query.name as string
+let country = route.query.name as string
+
+watch(
+  () => route.query,
+  (newQuery) => {
+    country = newQuery.name as string
+  },
+)
 </script>
 
 <template>
@@ -30,7 +38,8 @@ const country = route.query.name as string
               <strong>Native Name:</strong><span>{{ data.findCountry(country).nativeName }}</span>
             </p>
             <p>
-              <strong>Population:</strong><span>{{ data.findCountry(country).population }}</span>
+              <strong>Population:</strong
+              ><span>{{ data.findCountry(country).population.toLocaleString() }}</span>
             </p>
             <p>
               <strong>Region:</strong><span>{{ data.findCountry(country).region }}</span>
@@ -45,7 +54,7 @@ const country = route.query.name as string
           <div class="details">
             <p>
               <strong>Top Level Domain:</strong
-              ><span>{{ data.findCountry(country).topLevelDomain.toString() }}</span>
+              ><span>{{ data.findCountry(country).topLevelDomain.join(', ') }}</span>
             </p>
 
             <p>
@@ -54,7 +63,7 @@ const country = route.query.name as string
                 data
                   .findCountry(country)
                   .currencies?.map((item) => item.name)
-                  .toString()
+                  .join(', ')
               }}</span>
             </p>
 
@@ -64,7 +73,7 @@ const country = route.query.name as string
                 data
                   .findCountry(country)
                   .languages.map((item) => item.name)
-                  .toString()
+                  .join(', ')
               }}</span>
             </p>
           </div>
@@ -72,13 +81,14 @@ const country = route.query.name as string
         <div class="border">
           <p class="border-title details"><strong>Bordering Countries:</strong></p>
           <div class="container__border">
-            <p
-              class="border-list block"
-              :class="color.mode"
+            <router-link
+              :to="{ path: '/country/', query: { name: data.findBorder(border).name } }"
               v-for="border in data.findCountry(country).borders"
             >
-              {{ border }}
-            </p>
+              <p class="border-list block" :class="color.mode">
+                {{ data.findBorder(border).name }}
+              </p>
+            </router-link>
           </div>
         </div>
       </div>
@@ -143,6 +153,10 @@ strong {
   flex-wrap: wrap;
 }
 
+a {
+  text-decoration: none;
+}
+
 .border-list {
   font: var(--font-preset-6l);
   flex: 0 1 1;
@@ -151,6 +165,10 @@ strong {
 
   padding: 0.5em;
   margin: 0;
+}
+
+.border-list:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 47.5em) {
